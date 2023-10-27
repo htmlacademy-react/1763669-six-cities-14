@@ -1,8 +1,12 @@
 import MainPage from '../../pages/main-page/main-page';
 
-function App(): JSX.Element {
+type AppProps = {
+  suggestionsAmount: number;
+}
+
+function App({suggestionsAmount} : AppProps): JSX.Element {
   return (
-    <MainPage />
+    <MainPage suggestionsAmount= {suggestionsAmount}/>
   );
 }
 
