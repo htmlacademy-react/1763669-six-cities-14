@@ -2,9 +2,7 @@ import React from 'react';
 import ReactDOM from 'react-dom/client';
 import App from './components/app/app';
 
-const Settings = {
-  suggestionsAmount: 312
-} as const;
+const SUGGESTIONS_AMOUNT = 312;
 
 const root = ReactDOM.createRoot(
   document.getElementById('root') as HTMLElement
@@ -12,6 +10,6 @@ const root = ReactDOM.createRoot(
 
 root.render(
   <React.StrictMode>
-    <App suggestionsAmount={Settings.suggestionsAmount} />
+    <App suggestionsAmount={SUGGESTIONS_AMOUNT} />
   </React.StrictMode>
 );
