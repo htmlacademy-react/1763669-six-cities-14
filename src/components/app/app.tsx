@@ -1,11 +1,10 @@
 import {Route, BrowserRouter, Routes} from 'react-router-dom';
-import {AppRoute} from '../const';
+import {AppRoute, AuthorizationStatus} from '../const';
 import MainPage from '../../pages/main-page/main-page';
 import Login from '../../pages/login/login';
+import PrivateRoute from '../private-route/private-route';
 import Favourites from '../../pages/favourites/favourites';
-import FavouritesEmpty from '../../pages/favourites-empty/favourites-empty';
 import Offer from '../../pages/offer/offer';
-import OfferNotLogged from '../../pages/offer-not-logged/offer-not-logged';
 import NotFound from '../../pages/not-found/not-found';
 
 type AppProps = {
@@ -18,7 +17,13 @@ function App({suggestionsAmount} : AppProps): JSX.Element {
       <Routes>
         <Route
           path={AppRoute.Main}
-          element={<MainPage suggestionsAmount= {suggestionsAmount} />}
+          element={
+            <PrivateRoute
+              authorizationStatus={AuthorizationStatus.NoAuth}
+            >
+              <MainPage suggestionsAmount= {suggestionsAmount} />
+            </PrivateRoute>
+          }
         />
         <Route
           path={AppRoute.Login}
@@ -26,19 +31,23 @@ function App({suggestionsAmount} : AppProps): JSX.Element {
         />
         <Route
           path={AppRoute.Favourites}
-          element={<Favourites />}
-        />
-        <Route
-          path={AppRoute.FavouritesEmpty}
-          element={<FavouritesEmpty />}
+          element={
+            <PrivateRoute
+              authorizationStatus={AuthorizationStatus.NoAuth}
+            >
+              <Favourites />
+            </PrivateRoute>
+          }
         />
         <Route
           path={AppRoute.Offer}
-          element={<Offer />}
-        />
-        <Route
-          path={AppRoute.OfferNotLogged}
-          element={<OfferNotLogged />}
+          element={
+            <PrivateRoute
+              authorizationStatus={AuthorizationStatus.NoAuth}
+            >
+              <Offer />
+            </PrivateRoute>
+          }
         />
         <Route
           path="*"
