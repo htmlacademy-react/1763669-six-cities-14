@@ -1,8 +1,7 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
+import {SUGGESTIONS_AMOUNT} from './components/const';
 import App from './components/app/app';
-
-const SUGGESTIONS_AMOUNT = 312;
 
 const root = ReactDOM.createRoot(
   document.getElementById('root') as HTMLElement
