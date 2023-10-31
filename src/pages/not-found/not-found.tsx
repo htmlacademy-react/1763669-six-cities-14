@@ -32,10 +32,12 @@ function NotFound() :JSX.Element {
         </div>
       </header>
 
-      <main className="page__main page__main--offer">
-        <section className="offer">
-          <h2>404 Not Found</h2>
-          <a href="main.html">Вернуться на главную</a>
+      <main className="page__main">
+        <section>
+          <div className="container" style={{textAlign: 'center', padding: '30px 40px'}}>
+            <h2>404 Not Found</h2>
+            <a href="main.html">Вернуться на главную</a>
+          </div>
         </section>
       </main>
     </div>
