@@ -17,13 +17,7 @@ function App({suggestionsAmount} : AppProps): JSX.Element {
       <Routes>
         <Route
           path={AppRoute.Main}
-          element={
-            <PrivateRoute
-              authorizationStatus={AuthorizationStatus.NoAuth}
-            >
-              <MainPage suggestionsAmount= {suggestionsAmount} />
-            </PrivateRoute>
-          }
+          element={<MainPage suggestionsAmount= {suggestionsAmount} />}
         />
         <Route
           path={AppRoute.Login}
@@ -41,13 +35,7 @@ function App({suggestionsAmount} : AppProps): JSX.Element {
         />
         <Route
           path={AppRoute.Offer}
-          element={
-            <PrivateRoute
-              authorizationStatus={AuthorizationStatus.NoAuth}
-            >
-              <Offer />
-            </PrivateRoute>
-          }
+          element={<Offer />}
         />
         <Route
           path="*"
